@@ -1,0 +1,45 @@
+<%- include('partials/head', { title: 'Events' }) %>
+<%- include('partials/navbar') %>
+
+<div class="container py-4">
+
+  <!-- Header -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="h3 mb-0">Events</h1>
+    <button id="refreshEventsBtn" class="btn btn-dark btn-sm">Refresh</button>
+  </div>
+
+  <!-- Filters -->
+  <div class="row g-2 mb-3">
+    <div class="col-md-6">
+      <input
+        id="eventSearchInput"
+        class="form-control"
+        placeholder="Search events by title..."
+      />
+    </div>
+
+    <div class="col-md-3">
+      <select id="sportFilterSelect" class="form-select">
+        <option value="">All sports</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <button id="clearFiltersBtn" class="btn btn-outline-secondary w-100">
+        Clear
+      </button>
+    </div>
+  </div>
+
+  <!-- Info / empty state -->
+  <div id="eventsAlert" class="alert alert-info d-none"></div>
+
+  <!-- Events grid -->
+  <div id="eventsGrid" class="row g-3">
+    <!-- Events will be rendered here by JS -->
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

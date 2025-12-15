@@ -1,0 +1,12 @@
+<%- include('partials/head', { title: 'My Events' }) %>
+<%- include('partials/navbar') %>
+
+<div class="container py-4">
+  <h1 class="h3">My Events</h1>
+  <p class="text-muted">Next we will load the logged-in user’s registered events here.</p>
+
+  <div id="myEventsAlert" class="alert alert-info d-none"></div>
+  <div id="myEventsGrid" class="row g-3"></div>
+</div>
+
+<%- include('partials/footer') %>

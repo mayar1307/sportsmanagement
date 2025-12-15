@@ -1,0 +1,33 @@
+<%- include('partials/head', { title: 'Register' }) %>
+<%- include('partials/navbar') %>
+
+<div class="container py-5" style="max-width: 520px;">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <h1 class="h4 mb-3">Register</h1>
+
+      <div id="registerAlert" class="alert alert-danger d-none"></div>
+
+      <form id="registerForm">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input class="form-control" type="text" name="name" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input class="form-control" type="email" name="email" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input class="form-control" type="password" name="password" required />
+        </div>
+
+        <button class="btn btn-warning w-100" type="submit">Create Account</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

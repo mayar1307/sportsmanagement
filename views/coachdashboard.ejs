@@ -1,0 +1,59 @@
+<%- include('partials/head', { title: 'Coach Dashboard' }) %>
+<%- include('partials/navbar') %>
+
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+      <h1 class="h3 mb-0">Coach Dashboard</h1>
+      <p class="text-muted mb-0">Create events, view registrations, and manage your sessions.</p>
+    </div>
+  </div>
+
+  <!-- Optional alert area -->
+  <div id="coachAlert" class="alert alert-warning d-none"></div>
+
+  <!-- Create Event -->
+  <form id="coachCreateEventForm" class="card p-3 shadow-sm mb-4">
+    <h5 class="mb-3">Create Event</h5>
+
+    <input class="form-control mb-2" name="title" placeholder="Title" required />
+    <textarea class="form-control mb-2" name="description" placeholder="Description"></textarea>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label small text-muted">Date</label>
+        <input class="form-control mb-2" name="date" type="date" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label small text-muted">Time</label>
+        <input class="form-control mb-2" name="time" type="time" required />
+      </div>
+    </div>
+
+    <label class="form-label small text-muted">Capacity</label>
+    <input class="form-control mb-2" name="capacity" type="number" min="1" placeholder="e.g. 10" required />
+
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label small text-muted">Sport ID</label>
+        <input class="form-control mb-2" name="sport_id" type="number" min="1" placeholder="e.g. 1" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label small text-muted">Room ID</label>
+        <input class="form-control mb-2" name="room_id" type="number" min="1" placeholder="e.g. 1" required />
+      </div>
+    </div>
+
+    <button class="btn btn-dark">Create</button>
+  </form>
+
+  <!-- Events list -->
+  <div class="d-flex align-items-center justify-content-between mb-2">
+    <h5 class="mb-0">Events</h5>
+    <button class="btn btn-outline-dark btn-sm" id="refreshCoachEventsBtn" type="button">Refresh</button>
+  </div>
+
+  <div id="coachEventsGrid"></div>
+</div>
+
+<%- include('partials/footer') %>
